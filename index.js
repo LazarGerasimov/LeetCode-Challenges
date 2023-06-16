@@ -1,14 +1,13 @@
-function eliminateUnsetBits(number) {
-  let numArr = number.split("");
+var moveZeroes = function(nums) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            nums.splice(i, 1);
+            nums.push(0);
+            i--;
+        }
+      console.log(nums);
+    }
   
-  const augmentedArr = numArr.filter(x => x != 0);
-  let result = 0;
-
-  for (let i = 0; i < augmentedArr.length; i++) {
-    result += Number(augmentedArr[i]) * Math.pow(2, i);
-  }
-  
-  // console.log(result);
-  return result;
-}
-eliminateUnsetBits("11010101010101");
+    return nums;
+};
+moveZeroes([0, 1, 0])
