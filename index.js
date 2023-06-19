@@ -1,20 +1,25 @@
-const largestAltitude = function(gain) {
-
-  gain.unshift(0);
-
-  let totalAltitude = 0;
-  let maxAltitude = 0; 
-
-  for (let i = 1; i < gain.length; i++) {
-    totalAltitude += gain[i];
+const lengthOfLongestSubstring = function (s) {
     
-    if (totalAltitude > 0 && totalAltitude > maxAltitude) {
-      maxAltitude = totalAltitude; 
-    }
-    console.log(maxAltitude)
-  }
+    let currentString = [];
+    let longestStringLength = 0;
 
-  return maxAltitude > 0 ? maxAltitude : 0;
+    for (let i = 0; i < s.length; i++) {
+        
+        const currentCharacterPosition = currentString.indexOf(s[i]);
 
+        if (currentCharacterPosition !== -1) {
+            currentString.splice(0, currentCharacterPosition + 1);
+        }
+
+        currentString.push(s[i]);
+      
+        longestStringLength = Math.max(
+            longestStringLength,
+            currentString.length
+        );     
+      console.log(currentString)
+    }   
+    return longestStringLength;
 };
-largestAltitude([-5,1,5,0,-7]);
+
+lengthOfLongestSubstring("abcdefgtb");
