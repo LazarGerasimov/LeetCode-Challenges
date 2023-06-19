@@ -1,25 +1,15 @@
-const lengthOfLongestSubstring = function (s) {
+var checkStraightLine = function(coordinates) {
+    let isStraight = true; 
+    let diff = Math.abs(coordinates[1][1] - coordinates[1][0]);
+    console.log(diff)
     
-    let currentString = [];
-    let longestStringLength = 0;
+    for (let i = 2; i < coordinates.length; i++) {
+      if (Math.abs(coordinates[i][1] - coordinates[i][0]) !== diff) {
+        isStraight = false;
+      }
+    }
 
-    for (let i = 0; i < s.length; i++) {
-        
-        const currentCharacterPosition = currentString.indexOf(s[i]);
-
-        if (currentCharacterPosition !== -1) {
-            currentString.splice(0, currentCharacterPosition + 1);
-        }
-
-        currentString.push(s[i]);
-      
-        longestStringLength = Math.max(
-            longestStringLength,
-            currentString.length
-        );     
-      console.log(currentString)
-    }   
-    return longestStringLength;
+  return isStraight;
 };
 
-lengthOfLongestSubstring("abcdefgtb");
+checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]);

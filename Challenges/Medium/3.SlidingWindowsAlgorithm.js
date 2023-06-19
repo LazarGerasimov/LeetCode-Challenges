@@ -26,6 +26,8 @@ const lengthOfLongestSubstring = function(s) {
   return longestStringLength;
 };
 
+lengthOfLongestSubstring("asdfasddsa")
+
 
 // Example 1: 
 // Input: s = "abcabcbb"
