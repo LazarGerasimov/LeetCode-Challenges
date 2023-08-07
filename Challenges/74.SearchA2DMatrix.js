@@ -31,7 +31,7 @@ const searchMatrix = function(matrix, target) {
 
     return isItInTheMatrix;
 
-    /* Shorter solution using flat: 
+    /* Shorter solution using flat method: 
     
       return matrix.flat(1).includes(target) 
 
